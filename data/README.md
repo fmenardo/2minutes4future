@@ -22,6 +22,7 @@ Citation: A Reconstruction of Regional and Global Temperature for the Past 11,30
 Download data from supplementary table S1: https://science.sciencemag.org/highwire/filestream/594506/field_highwire_adjunct_files/1/Marcott.SM.database.S1.xlsx
 
 *"This study includes 73 records derived from multiple paleoclimate archive sand temperature proxies(Fig. S1; Table S1): alkenone (n=31), planktonic foraminifera Mg/Ca (n=19), TEX86 (n=4), fossil chironomid transfer function (n=4),fossil pollen modern analog technique (MAT) (n=4), ice-core stable isotopes (n=5), other microfossil assemblages(MATand Transfer Function)(n=5), and Methylation index of Branched Tetraethers(MBT)(n=1) \[...\] The 73 globally distributed temperature records used in our analysis are based on a variety of paleotemperature proxies and have sampling resolutions ranging from 20 to 500 years,with a median resolution of 120 years"*.
+
 An important limitation of this data is that it does not fully resolve variability at periods shorter than 2000 years, with essentially no variability preserved at periods shorter than 300 years, ~50% preserved at 1000-year periods,and nearly all of the variability preserved for periods longer than 2000 years
 
 ## Atmospheric CO2 concentration
@@ -40,3 +41,10 @@ Citation: Bereiter, B., Eggleston, S., Schmitt, J., Nehrbass‐Ahles, C., Stocke
 
 Download: https://ourworldindata.org/co2-and-other-greenhouse-gas-emissions/
 
+## Yearly CO2 emissions
+
+Data obtained from Friedlingstein et al. 2020. It includes emissions from fossil fuel combustion, oxidation, and cement production. 
+
+Citation: Friedlingstein et al. 2020. Earth Syst. Sci. Data, 12, 3269–3340, 2020 https://doi.org/10.5194/essd-12-3269-2020
+
+Download: https://data.icos-cp.eu/licence_accept?ids=%5B%22xUUehljs1oTazlGlmigAhvfe%22%5D
