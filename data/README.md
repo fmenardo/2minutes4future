@@ -24,6 +24,7 @@ Citation: A Reconstruction of Regional and Global Temperature for the Past 11,30
 Download data from supplementary table S1: https://science.sciencemag.org/highwire/filestream/594506/field_highwire_adjunct_files/1/Marcott.SM.database.S1.xlsx
 
 File name: Marcott.SM.database.S1.xlsx (original file)
+
            Marcott_2013_data.tsv (subset of the original file including the global stack Standard 5x5 grid with 1σ uncertainty)
 
 *"This study includes 73 records derived from multiple paleoclimate archive sand temperature proxies(Fig. S1; Table S1): alkenone (n=31), planktonic foraminifera Mg/Ca (n=19), TEX86 (n=4), fossil chironomid transfer function (n=4),fossil pollen modern analog technique (MAT) (n=4), ice-core stable isotopes (n=5), other microfossil assemblages(MATand Transfer Function)(n=5), and Methylation index of Branched Tetraethers(MBT)(n=1) \[...\] The 73 globally distributed temperature records used in our analysis are based on a variety of paleotemperature proxies and have sampling resolutions ranging from 20 to 500 years,with a median resolution of 120 years"*.
@@ -59,4 +60,5 @@ Citation: Friedlingstein et al. 2020. Earth Syst. Sci. Data, 12, 3269–3340, 20
 Download: https://data.icos-cp.eu/licence_accept?ids=%5B%22xUUehljs1oTazlGlmigAhvfe%22%5D
 
 File name: National_Carbon_Emissions_2020v1.0.xlsx (original file)
+
            annual_emission.tsv (subset of the original file including territorial emissions for the world)
