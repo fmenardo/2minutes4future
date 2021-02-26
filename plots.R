@@ -55,7 +55,7 @@ p
 #other microfossil assemblages(MATand Transfer Function)(n=5), and Methylation index of Branched Tetraethers(MBT)(n=1)
 
 
-# An important limitation of this data is thta it does not fully resolve variability at periods shorter than 2000 years,
+# An important limitation of this data is that it does not fully resolve variability at periods shorter than 2000 years,
 # with essentially no variability preserved at periods shorter than 300 years, ~50% preserved at 1000-year periods, 
 # and nearly all of the variability preserved for periods longer than 2000 years
 
@@ -132,7 +132,7 @@ CO2_recent<-read.table("data/co2_annmean_mlo.txt",header=F)
 
 #Citation: Bereiter, B., Eggleston, S., Schmitt, J., Nehrbass‐Ahles, C., Stocker, T. F., Fischer, H., ... & Chappellaz, J. (2015). Revision of the EPICA Dome C CO2 record from 800 to 600 kyr before present. Geophysical Research Letters, 42(2), 542-549.
 
-# Download: https://ourworldindata.org/co2-and-other-greenhouse-gas-emissions/co2-concentration-long-term.csv
+# Download: https://ourworldindata.org/co2-and-other-greenhouse-gas-emissions
 
 CO2_old<-read.csv("data/co2-concentration-long-term.csv")
 
