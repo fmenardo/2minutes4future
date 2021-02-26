@@ -27,7 +27,7 @@ An important limitation of this data is that it does not fully resolve variabili
 
 ## Atmospheric CO2 concentration
 
-### 1959 AD -present
+### 1959 AD - present
 
 Data from 1959 through 1979 have been obtained by C. David Keeling of the Scripps Institution of Oceanography (SIO) and were obtained from the Scripps website (scrippsco2.ucsd.edu). Data from 1980 onwards is sourced from NOAA's Mauna Loa monitoring station
 
