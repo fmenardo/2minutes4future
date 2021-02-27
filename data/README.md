@@ -41,7 +41,7 @@ Download: https://www.esrl.noaa.gov/gmd/webdata/ccgg/trends/co2/co2_annmean_mlo.
 
 File name: co2_annmean_mlo.txt
 
-### ~800,000 BC - 1959 AD
+### ~800,000 BC - 1958 AD
 
 Long-term data were compiled by Our world in data: data from ice cores – specifically the Dome C core – has been made available from the NOAA here: https://www.ncdc.noaa.gov/paleo-search/study/17975. In this original dataset, some years had multiple measurements (taken at different points of the year). To normalize this to a single year, where several measurements were available, we took the average of these concentration values. Dome C data has been used until the year 1958.
 
