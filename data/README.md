@@ -15,7 +15,7 @@ File format: https://www.metoffice.gov.uk/hadobs/hadcrut4/data/current/series_fo
 
 File name: HadCRUT.4.6.0.0.annual_ns_avg.txt
 
-### 11,300 BC - 1900 AD
+### ~9,300 BC - 1900 AD
 
 The estimates of the temperature anomaly in the Holocene was obtained from Marcott et al. 2013
 
