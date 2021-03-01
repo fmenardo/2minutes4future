@@ -1,0 +1,17 @@
+# This is a python matplotlib style file that can be use with the script 
+# `plots.py` to define the look and feel of the plots.
+# Refer to https://matplotlib.org/stable/tutorials/introductory/customizing.html
+# for detailed instructions on how to create such a file.
+#
+# Fontsizes of titles and labels
+axes.titlesize : 14
+axes.labelsize : 12
+# Margins in percent of the full data range
+axes.xmargin : 0.05
+axes.ymargin : 0.1
+lines.linewidth : 1
+# Ticks
+xtick.direction : in
+ytick.direction : in
+xtick.labelsize : 10
+ytick.labelsize : 10
