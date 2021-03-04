@@ -57,8 +57,8 @@ Data obtained from Friedlingstein et al. 2020. It includes emissions from fossil
 
 Citation: Friedlingstein et al. 2020. Earth Syst. Sci. Data, 12, 3269–3340, 2020 https://doi.org/10.5194/essd-12-3269-2020
 
-Download: https://data.icos-cp.eu/licence_accept?ids=%5B%22xUUehljs1oTazlGlmigAhvfe%22%5D
+Download: https://data.icos-cp.eu/licence_accept?ids=%5B%226QlPjfn_7uuJtAeuGGFXuPwz%22%5D
 
-File name: National_Carbon_Emissions_2020v1.0.xlsx (original file)
+File name: Global_Carbon_Budget_2020v1.0.xlsx (original file)
 
-File name: annual_emission.tsv (subset of the original file including territorial emissions for the world)
+File name: annual_emission.tsv (text file obtained from orinial spreadsheet)

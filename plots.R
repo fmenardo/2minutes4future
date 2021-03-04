@@ -260,11 +260,10 @@ ggsave("plots_png/T_CO2_last_170_years.png",width=11,height=6)
 #All values in million tonnes of carbon per year. For values in million tonnes of CO2 per year, multiply the values below by 3.664
 #Include emissions from fossil fuel combustion and oxidation and cement production 
 
-# Download: https://data.icos-cp.eu/licence_accept?ids=%5B%22xUUehljs1oTazlGlmigAhvfe%22%5D
+# Download: https://data.icos-cp.eu/licence_accept?ids=%5B%226QlPjfn_7uuJtAeuGGFXuPwz%22%5D
 
-emissions <- read.table("data/annual_emission.tsv",header=T)  # file with Territorial emissions (World)
-emissions$emission <-((emissions$emission*3.664 )/1000)
-
+emissions <- read.table("data/annual_emission.tsv",header=T)  # file with historical emissions (World)
+emissions$emission <-(emissions$emission*3.664 )
 
 p <- ggplot(data=emissions,aes(x = Year, y = emission))  + geom_line () + ylab("Gt CO2 per year") + xlab("Year")+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
@@ -276,6 +275,8 @@ p
 
 ggsave("plots_pdf/CO2_emissions.pdf",width=11,height=6)
 ggsave("plots_png/CO2_emissions.png",width=11,height=6)
+
+tail(emissions, n=15)
 
 
 
