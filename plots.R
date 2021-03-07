@@ -276,7 +276,89 @@ p
 ggsave("plots_pdf/CO2_emissions.pdf",width=11,height=6)
 ggsave("plots_png/CO2_emissions.png",width=11,height=6)
 
-tail(emissions, n=15)
 
+
+
+# plot sea level change
+
+#Long term data were taken from Frederikse et al. (2020) and are derive from tide gauge records
+
+#Citation: Frederikse, T., Landerer, F., Caron, L. et al. The causes of sea-level rise since 1900. Nature 584, 393–397 (2020). https://doi.org/10.1038/s41586-020-2591-3
+
+#Download: https://zenodo.org/record/3862995/files/global_basin_timeseries.xlsx?downlo
+
+
+sea_old <- read.table("data/GMSL_long_term.txt", header=T)
+
+ref=subset(sea_old,sea_old$Year==1900)
+ref
+sea_o=sea_old+(-ref$GMSL_mean) # recalibrate: level of 1900 = 0
+sea_o$Year <- sea_old$Year
+head(sea_old)
+head(sea_o)
+
+# from 1993 there is satellite data available from nasa
+
+# https://climate.nasa.gov/vital-signs/sea-level/
+# Citation: GSFC. 2020. Global Mean Sea Level Trend from Integrated Multi-Mission Ocean Altimeters TOPEX/Poseidon, Jason-1, OSTM/Jason-2, and Jason-3 Version 5.0 Ver. 5.0 PO.DAAC, CA, USA. Dataset accessed [2021-03-04] at http://dx.doi.org/10.5067/GMSLM-TJ150.
+#Download: https://podaac-tools.jpl.nasa.gov/drive/files/allData/merged_alt/L2/TP_J1_OSTM/global_mean_sea_level/GMSL_TPJAOS_5.0_199209_202010.txt (needs login)
+
+# column description 
+# 1 altimeter type 0=dual-frequency  999=single frequency (ie Poseidon-1) 
+# 2 merged file cycle # 
+# 3 year+fraction of year (mid-cycle) 
+# 4 number of observations 
+# 5 number of weighted observations 
+# 6 GMSL (Global Isostatic Adjustment (GIA) not applied) variation (mm) with respect to 20-year TOPEX/Jason collinear mean reference 
+# 7 standard deviation of GMSL (GIA not applied) variation estimate (mm)
+# 8 smoothed (60-day Gaussian type filter) GMSL (GIA not applied) variation (mm)  
+# 9 GMSL (Global Isostatic Adjustment (GIA) applied) variation (mm) with respect to 20-year TOPEX/Jason collinear mean reference 
+# 10 standard deviation of GMSL (GIA applied) variation estimate (mm)
+# 11 smoothed (60-day Gaussian type filter) GMSL (GIA applied) variation (mm)
+# 12 smoothed (60-day Gaussian type filter) GMSL (GIA applied) variation (mm); annual and semi-annual signal removed
+#
+# Missing or bad value flag: 99900.000 
+# 
+# TOPEX/Jason 1996-2016 collinear mean reference derived from cycles 121 to 858.
+
+
+
+sea <- read.table("data/GMSL.txt", header=F) # removed header from original file
+
+
+ref=subset(sea_o,sea_o$Year==1993)
+ref$GMSL_mean
+ref1=sea[1,6]
+
+sea[,13]=sea[,6]+(ref$GMSL_mean+(-ref1))
+
+colnames(sea) <-c("","","Year","","","GMSL (Global Isostatic Adjustment (GIA) not applied) variation (mm) with respect to 20-year TOPEX/Jason collinear mean reference",
+                  "","","","","","","GMSL_ref")
+
+Merged_sea<-merge(x = sea_o, y = sea, by = "Year", all = TRUE) # merge  datasets
+
+
+p<- ggplot(data=subset(Merged_sea,!is.na(GMSL_mean)),aes(x = Year, y = GMSL_mean,colour="Tide gauge (Frederikse et al. 2020)"))  + 
+        geom_line ()  + ylab("sea level change (mm)") + xlab("Year")+xlim(1900,2021)+
+  geom_ribbon(data=subset(Merged_sea,!is.na(GMSL_mean)),aes(ymin=GMSL_lower, ymax=GMSL_upper,colour="Tide gauge (Frederikse et al. 2020)",fill="Tide gauge (Frederikse et al. 2020)") ,linetype=0, alpha=0.3) +   
+  geom_line(data=subset(Merged_sea,!is.na(GMSL_ref)),aes(y=GMSL_ref,x=Year,colour="Satellite (NASA)"),alpha=0.7) +
+  geom_hline(yintercept=100, linetype=3)+  geom_hline(yintercept=200, linetype=3)+geom_hline(yintercept=0, linetype=3)+
+  geom_ribbon(data=subset(Merged_sea,!is.na(GMSL_ref)),aes(x=Year,ymin=GMSL_ref-4, ymax=GMSL_ref+4,colour="Satellite (NASA)",fill="Satellite (NASA)"),linetype=0, alpha=0.3) +   #uncertaineity 4 mm taken from https://climate.nasa.gov/vital-signs/sea-level/
+  scale_colour_manual("", 
+                      breaks = c("Tide gauge (Frederikse et al. 2020)", "Satellite (NASA)"),
+                      values = c("black", "red")) +
+  scale_fill_manual("", 
+                    breaks = c("Tide gauge (Frederikse et al. 2020)", "Satellite (NASA)"),
+                   values = c("black", "red")) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        axis.text=element_text(size=12),axis.title=element_text(size=14,face="bold"),
+        panel.background = element_blank(), axis.line = element_line(colour = "black"),
+        panel.border = element_rect(color = "black",fill = NA,size = 1)) + 
+  theme(legend.position = c(0.17, 0.96),legend.text = element_text(size=13),legend.background = element_blank(),
+        legend.box.background = element_blank())
+
+p
+ggsave(filename=paste0("plots_pdf/sea_level_change.pdf"),width=11,height=6)
+ggsave(filename=paste0("plots_png/sea_level_change.png"),width=11,height=6)
 
 

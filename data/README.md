@@ -61,4 +61,32 @@ Download: https://data.icos-cp.eu/licence_accept?ids=%5B%226QlPjfn_7uuJtAeuGGFXu
 
 File name: Global_Carbon_Budget_2020v1.0.xlsx (original file)
 
-File name: annual_emission.tsv (text file obtained from orinial spreadsheet)
+File name: annual_emission.tsv (text file obtained from original spreadsheet)
+
+
+## Sea level
+
+### 1993 AD - present (satellite)
+
+From 1993 there is satellite data available from NASA on the sea level (https://climate.nasa.gov/vital-signs/sea-level/)
+
+Citation: GSFC. 2020. Global Mean Sea Level Trend from Integrated Multi-Mission Ocean Altimeters TOPEX/Poseidon, Jason-1, OSTM/Jason-2, and Jason-3 Version 5.0 Ver. 5.0 PO.DAAC, CA, USA. Dataset accessed [2021-03-04] at http://dx.doi.org/10.5067/GMSLM-TJ150.
+
+Download: https://podaac-tools.jpl.nasa.gov/drive/files/allData/merged_alt/L2/TP_J1_OSTM/global_mean_sea_level/GMSL_TPJAOS_5.0_199209_202010.txt (needs login)
+
+File name: GMSL_TPJAOS_5.0_199209_202010.txt (original file)
+
+File name: GMSL.txt (header removed)
+
+
+### 1900 AD - 2018 (tide gauge)
+
+Long term data were taken from Frederikse et al. (2020) and derive from tide gauge records
+
+Citation: Frederikse, T., Landerer, F., Caron, L. et al. The causes of sea-level rise since 1900. Nature 584, 393–397 (2020). https://doi.org/10.1038/s41586-020-2591-3
+
+Download: https://zenodo.org/record/3862995/files/global_basin_timeseries.xlsx?download=1
+
+File name: global_basin_timeseries.xlsx (original file)
+
+File name: GMSL_long_term.txt (text file obtained from original spreadsheet)
