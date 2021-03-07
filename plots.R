@@ -281,7 +281,7 @@ ggsave("plots_png/CO2_emissions.png",width=11,height=6)
 
 # plot sea level change
 
-#Long term data were taken from Frederikse et al. (2020) and are derive from tide gauge records
+#Long term data were taken from Frederikse et al. (2020) and derive from tide gauge records
 
 #Citation: Frederikse, T., Landerer, F., Caron, L. et al. The causes of sea-level rise since 1900. Nature 584, 393–397 (2020). https://doi.org/10.1038/s41586-020-2591-3
 
