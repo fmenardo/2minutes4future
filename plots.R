@@ -165,7 +165,7 @@ for (i in years) {
   
 
 
-p<- ggplot(data=subset(Merged_T_C,!is.na(mean)), aes(x=Year, y=mean))  + geom_line () + ylab(bquote('Atmospheric ' ~CO[2]~ '(ppm)')) +
+p<- ggplot(data=subset(Merged_T_C,!is.na(mean)), aes(x=Year, y=mean))  + geom_line () + ylab(bquote(bold('Atmospheric ' ~CO[2]~ '(ppm)'))) +
   scale_x_continuous(breaks=bre,limits=c(2021-i,2021)) +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         axis.text=element_text(size=12),axis.title=element_text(size=14,face="bold"),
@@ -192,7 +192,7 @@ years=c(12000,5000,2000,1000,500)
 for (i in years) {
   if (i == 12000){bre=c(-8000,-6000,-4000,-2000,0,2000)}else {bre=waiver()}
   
-  p1<- ggplot(data=subset(Merged_T_C,!is.na(mean)), aes(x=Year, y=mean))  + geom_line () + ylab(bquote('Atmospheric ' ~CO[2]~ '(ppm)')) +  ylim(225,450)+
+  p1<- ggplot(data=subset(Merged_T_C,!is.na(mean)), aes(x=Year, y=mean))  + geom_line () + ylab(bquote(bold('Atmospheric ' ~CO[2]~ '(ppm)'))) +  ylim(225,450)+
     scale_x_continuous(breaks=bre,limits=c(2021-i,2021)) +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
           axis.text=element_text(size=12),axis.title=element_text(size=14,face="bold"),
@@ -234,7 +234,7 @@ for (i in years) {
 # plot T and C only instrumental T
 
 
-p1<- ggplot(data=subset(Merged_T_C,!is.na(mean)), aes(x=Year, y=mean))  + geom_line () + xlim(1850,2021) + ylab(bquote('Atmospheric ' ~CO[2]~ '(ppm)')) +  ylim(225,450)+
+p1<- ggplot(data=subset(Merged_T_C,!is.na(mean)), aes(x=Year, y=mean))  + geom_line () + xlim(1850,2021) + ylab(bquote(bold('Atmospheric ' ~CO[2]~ '(ppm)'))) +  ylim(225,450)+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         axis.text=element_text(size=12),axis.title=element_text(size=14,face="bold"),
         panel.background = element_blank(), axis.line = element_line(colour = "black"),
@@ -266,7 +266,7 @@ ggsave("plots_png/T_CO2_last_170_years.png",width=11,height=6)
 emissions <- read.table("data/annual_emission.tsv",header=T)  # file with historical emissions (World)
 emissions$emission <-(emissions$emission*3.664 )
 
-p <- ggplot(data=emissions,aes(x = Year, y = emission))  + geom_line ()+ xlab("Year")+  ylab(bquote('Gt ' ~CO[2]~ 'per year'))+
+p <- ggplot(data=emissions,aes(x = Year, y = emission))  + geom_line ()+ xlab("Year")+  ylab(bquote(bold('Gt ' ~CO[2]~ 'per year')))+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         axis.text=element_text(size=12),axis.title=element_text(size=14,face="bold"),
         panel.background = element_blank(), axis.line = element_line(colour = "black"),
