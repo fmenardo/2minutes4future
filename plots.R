@@ -340,7 +340,7 @@ Merged_sea<-merge(x = sea_o, y = sea, by = "Year", all = TRUE) # merge  datasets
 
 
 p<- ggplot(data=subset(Merged_sea,!is.na(GMSL_mean)),aes(x = Year, y = GMSL_mean,colour="Tide gauge (Frederikse et al. 2020)"))  + 
-        geom_line ()  + ylab("sea level change (mm)") + xlab("Year")+xlim(1900,2021)+
+        geom_line ()  + ylab("Sea level change (mm)") + xlab("Year")+xlim(1900,2021)+
   geom_ribbon(data=subset(Merged_sea,!is.na(GMSL_mean)),aes(ymin=GMSL_lower, ymax=GMSL_upper,colour="Tide gauge (Frederikse et al. 2020)",fill="Tide gauge (Frederikse et al. 2020)") ,linetype=0, alpha=0.3) +   
   geom_line(data=subset(Merged_sea,!is.na(GMSL_ref)),aes(y=GMSL_ref,x=Year,colour="Satellite (NASA)"),alpha=0.7) +
   geom_hline(yintercept=100, linetype=3)+  geom_hline(yintercept=200, linetype=3)+geom_hline(yintercept=0, linetype=3)+
