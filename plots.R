@@ -164,7 +164,8 @@ for (i in years) {
   if (i == 12000){bre=c(-8000,-6000,-4000,-2000,0,2000)}else {bre=waiver()}
   
 
-p<- ggplot(data=subset(Merged_T_C,!is.na(mean)), aes(x=Year, y=mean))  + geom_line () + ylab("Atmospheric CO2 (ppm)") +
+
+p<- ggplot(data=subset(Merged_T_C,!is.na(mean)), aes(x=Year, y=mean))  + geom_line () + ylab(bquote('Atmospheric ' ~CO[2]~ '(ppm)')) +
   scale_x_continuous(breaks=bre,limits=c(2021-i,2021)) +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         axis.text=element_text(size=12),axis.title=element_text(size=14,face="bold"),
@@ -178,7 +179,7 @@ ggsave(filename=paste0("plots_png/CO2_atmospheric_conc_last_",i,"_years.png"),wi
 }
 
 
-
+p
 #plot T and CO2 together 
 
 library(gridExtra)
@@ -191,7 +192,7 @@ years=c(12000,5000,2000,1000,500)
 for (i in years) {
   if (i == 12000){bre=c(-8000,-6000,-4000,-2000,0,2000)}else {bre=waiver()}
   
-  p1<- ggplot(data=subset(Merged_T_C,!is.na(mean)), aes(x=Year, y=mean))  + geom_line () + ylab("Atmospheric CO2 (ppm)") +
+  p1<- ggplot(data=subset(Merged_T_C,!is.na(mean)), aes(x=Year, y=mean))  + geom_line () + ylab(bquote('Atmospheric ' ~CO[2]~ '(ppm)')) +  ylim(225,450)+
     scale_x_continuous(breaks=bre,limits=c(2021-i,2021)) +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
           axis.text=element_text(size=12),axis.title=element_text(size=14,face="bold"),
@@ -233,8 +234,7 @@ for (i in years) {
 # plot T and C only instrumental T
 
 
-p1<- ggplot(data=subset(Merged_T_C,!is.na(mean)), aes(x=Year, y=mean))  + geom_line () + xlim(1850,2021) + ylab("Atmospheric CO2 (ppm)") +
-  geom_hline(yintercept=0, linetype=3)+
+p1<- ggplot(data=subset(Merged_T_C,!is.na(mean)), aes(x=Year, y=mean))  + geom_line () + xlim(1850,2021) + ylab(bquote('Atmospheric ' ~CO[2]~ '(ppm)')) +  ylim(225,450)+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         axis.text=element_text(size=12),axis.title=element_text(size=14,face="bold"),
         panel.background = element_blank(), axis.line = element_line(colour = "black"),
@@ -242,6 +242,7 @@ p1<- ggplot(data=subset(Merged_T_C,!is.na(mean)), aes(x=Year, y=mean))  + geom_l
 
 p<- ggplot(data=subset(Merged_T,!is.na(Median)),aes(x = Year, y = Median))  + geom_line (colour="red") + xlim(1850,2021) + ylab(ylabel) + xlab("")+
   geom_ribbon(data=subset(Merged_T,!is.na(Median)),aes(ymin=CI_low, ymax=CI_high), linetype=0, alpha=0.3,fill="red") +   
+  geom_hline(yintercept=0, linetype=3)+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         axis.text=element_text(size=12),axis.title=element_text(size=14,face="bold"),
         panel.background = element_blank(), axis.line = element_line(colour = "black"),
@@ -265,7 +266,7 @@ ggsave("plots_png/T_CO2_last_170_years.png",width=11,height=6)
 emissions <- read.table("data/annual_emission.tsv",header=T)  # file with historical emissions (World)
 emissions$emission <-(emissions$emission*3.664 )
 
-p <- ggplot(data=emissions,aes(x = Year, y = emission))  + geom_line () + ylab("Gt CO2 per year") + xlab("Year")+
+p <- ggplot(data=emissions,aes(x = Year, y = emission))  + geom_line ()+ xlab("Year")+  ylab(bquote('Gt ' ~CO[2]~ 'per year'))+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         axis.text=element_text(size=12),axis.title=element_text(size=14,face="bold"),
         panel.background = element_blank(), axis.line = element_line(colour = "black"),
