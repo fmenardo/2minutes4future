@@ -95,7 +95,7 @@ File name: GMSL_long_term.txt (text file obtained from original spreadsheet)
 
 ### 1979-2019 Satellites data
 
-This series is composed by measurments from several instruments over the years which are modeled with a neural network
+This series is composed by measurements from several instruments over the years which are modeled with a neural network
 
 Citation: Mauceri, S., Coddington, O., Lyles, D. et al. Neural Network for Solar Irradiance Modeling (NN-SIM). Sol Phys 294, 160 (2019). https://doi.org/10.1007/s11207-019-1555-y
 
