@@ -90,3 +90,17 @@ Download: https://zenodo.org/record/3862995/files/global_basin_timeseries.xlsx?d
 File name: global_basin_timeseries.xlsx (original file)
 
 File name: GMSL_long_term.txt (text file obtained from original spreadsheet)
+
+## Total solar irradiance 
+
+### 1979-2019 Satellites data
+
+This series is composed by measurments from several instruments over the years which are modeled with a neural network
+
+Citation: Mauceri, S., Coddington, O., Lyles, D. et al. Neural Network for Solar Irradiance Modeling (NN-SIM). Sol Phys 294, 160 (2019). https://doi.org/10.1007/s11207-019-1555-y
+
+Download: https://lasp.colorado.edu/lisird/data/nn_sim_tsi/
+
+File name: nn_sim_tsi.csv 
+
+

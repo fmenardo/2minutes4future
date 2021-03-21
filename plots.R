@@ -362,4 +362,25 @@ p
 ggsave(filename=paste0("plots_pdf/sea_level_change.pdf"),width=11,height=6)
 ggsave(filename=paste0("plots_png/sea_level_change.png"),width=11,height=6)
 
+# plot total solar irradiance
+
+# Data obtained by different satellites since 1979.
+#The Neural Network for Solar Irradiance Modeling (NN-SIM), reconstructs total solar irradiance and solar spectral irradiance from 205 nm to 2300 nm and from 1979 to the present day. The solar-irradiance model uses an ensemble of feed-forward artificial neural networks. 
+
+#Citation:  Mauceri, S., Coddington, O., Lyles, D. et al. Neural Network for Solar Irradiance Modeling (NN-SIM). Sol Phys 294, 160 (2019). https://doi.org/10.1007/s11207-019-1555-y
+
+
+sun <- read.csv(file="data/nn_sim_tsi.csv",header=T)
+
+colnames(sun)<-c("Year","irradiance","unc")
+
+p <- ggplot(data=sun,aes(x =Year , y = irradiance))  + geom_point (size=0.5)+  ylab(bquote(bold('Total solar irradiance ' ~(W/m^2) )))+
+  scale_x_continuous(breaks=c(10957,14610,18262,21915,25567),labels=c("1980","1990","2000","2010","2020")) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        axis.text=element_text(size=12),axis.title=element_text(size=14,face="bold"),
+        panel.background = element_blank(), axis.line = element_line(colour = "black"),
+        panel.border = element_rect(color = "black",fill = NA,size = 1))
+
+ggsave(filename=paste0("plots_pdf/Solar_irradiance.pdf"),width=11,height=6)
+ggsave(filename=paste0("plots_png/Solar_irradiance.png"),width=11,height=6)
 
