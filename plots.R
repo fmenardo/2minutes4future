@@ -20,11 +20,22 @@ HC<- read.table("data/HadCRUT.4.6.0.0.annual_ns_avg.txt",header=F) #
 colnames(HC)=c("Year","Median","","","","","","","","","CI_low","CI_high")
 
 
+temp <- subset(HC, HC$Year<1901)
+mean(temp$Median)
+
+HC_not_rescaled=HC
+
+
+HC$Median = HC$Median-mean(temp$Median)
+HC$CI_low = HC$CI_low-mean(temp$Median)
+HC$CI_high = HC$CI_high-mean(temp$Median)
+
+
 library("ggplot2")
 
 # plot T anomaly last 170 years
 
-ylabel="T anomaly in °C compared to 1961-1990"
+ylabel="T anomaly in °C compared to 1850-1900"
 
 p<- ggplot(data=HC, aes(x=Year, y=Median))  + geom_line (col="red") + xlim(1849,2021) + ylab(ylabel) +
   geom_ribbon(aes(ymin=CI_low, ymax=HC$CI_high), linetype=2, alpha=0.3, fill="red") +
@@ -39,7 +50,6 @@ p
 ggsave(filename="plots_pdf/T_anomaly_last_170_years.pdf",width =11, height =6)
 ggsave(filename="plots_png/T_anomaly_last_170_years.png",width =11, height =6)
 
-p  
 
 
 
@@ -80,8 +90,16 @@ M$Year=1950-M$Year # by convention 1950 is set as year 0, here the data is conve
 Merged_T<-merge(x = M, y = HC, by = "Year", all = TRUE) # merge Marcot and HADcrut4 datasets
 
 
+temp <- subset(HC, HC$Year<1901)
+mean(temp$Median)
+Merged_T_not_rescaled=Merged_T
+
+Merged_T$T = Merged_T$T-mean(temp$Median)
+
+
+
 # plot T anomaly from Marcott and HadCRUT at different times  
-ylabel="T anomaly in °C compared to 1961-1990"
+ylabel="T anomaly in °C compared to 1850-1900"
 
 years=c(12000,5000,2000,1000,500)
 options(scipen=999)
