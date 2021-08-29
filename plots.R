@@ -90,7 +90,7 @@ M$Year=1950-M$Year # by convention 1950 is set as year 0, here the data is conve
 Merged_T<-merge(x = M, y = HC, by = "Year", all = TRUE) # merge Marcot and HADcrut4 datasets
 
 
-temp <- subset(HC, HC$Year<1901)
+temp <- subset(HC_not_rescaled, HC$Year<1901)
 mean(temp$Median)
 Merged_T_not_rescaled=Merged_T
 
